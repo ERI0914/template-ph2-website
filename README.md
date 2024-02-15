@@ -35,3 +35,30 @@ https://posse-ap.github.io/sample-ph1-website/quiz3/
 /assets/styles/common.css
 /assets/scripts/quiz3.js
 ```
+
+
+
+
+
+### sql実行方法
+1. dbコンテナに接続する
+```
+docker compose exec db bash
+```
+2. dbコンテナの中でディレクトリを移動する
+```
+cd var/www/html
+```
+3. mysqlに接続し、作成したsqlを実行する
+```
+mysql -u root -p < week18-1.sql
+
+password;root
+//
+```
+4. エラーが出なければ `select * from books;` を実行する。実行した結果、以下のようにbooks一覧が表示されれば完了。
+select * from quiz_answers;
+**注意**
+ここでエラーが出た場合、修正箇所を修正後、再度3.のコマンドを実行する
+
+ 
